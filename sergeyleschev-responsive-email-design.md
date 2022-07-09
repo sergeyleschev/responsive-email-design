@@ -1,7 +1,7 @@
 # S.Leschev Responsive Email Design
 Google Engineering Level: L6+
 
-Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google Engineering Level: L6+
+Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. 
 
 ## 🏆 Awards
 ### Ranking #Dev: Global TOP 300 ([Certificate](https://leetcode.com/sergeyleschev/))
@@ -10,8 +10,6 @@ Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google 
 <a href="https://leetcode.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/sergeyleschev/blob/main/leetcode-medals.png?raw=true" width="280"/></a>
 
 **Languages**: Swift, Shell, Database (T-SQL, PL/SQL, MySQL), Concurrency (Python3).
-
-**Algorithms**: linked lists, binary search, hash table, queue/stack, dfs/bfs, sort, heap/hash, two pointers, sliding window, tree, greedy problems etc.
 
 ---
 <div style="page-break-after: always;"></div>
@@ -81,6 +79,8 @@ Below is the same email, only this time viewed in Apple’s iPhone Mail. As you 
 
 As a point of comparison, the right image is the same email, without this stylesheet. See how tiny and unreadable the text is? This is the problem that faces millions of email newsletters received on mobile devices every day.
 
+<div style="page-break-after: always;"></div>
+
 ### Mobile-friendly layouts and design elements
 Designing for mobile isn’t simply a matter of taking a crack at writing mobile-specific CSS. Here are some other considerations:
 
@@ -96,6 +96,7 @@ Designing for mobile isn’t simply a matter of taking a crack at writing mobile
 
 When mocking up an HTML email or template, our advice is to create three sketches or wireframes: one of the desktop and webmail layout, one for the tablet layout, and one for a mobile layout. Building these three layouts will allow you to see how your content will break on various devices, and it will help determine what media queries you’ll need.
 
+<div style="page-break-after: always;"></div>
 
 📧 Coding mobile emails
 -----------
@@ -104,11 +105,11 @@ When web designers or developers talk about stylesheets or CSS (Cascading Style 
 
 Several major email clients block external stylesheets we included our CSS in two ways:
 
-- Embedded styles located in the <head> of an email contained in a style tag
+- Embedded styles located in the "head" of an email contained in a style tag
 
 - Inline styles included in the body of your email
 
-When coding a mobile-responsive email, you’ll need both, as some clients will remove the embedded CSS in the <head> of your HTML document, so the inline style ensures your emails look perfect no matter what device your subscriber is using.
+When coding a mobile-responsive email, you’ll need both, as some clients will remove the embedded CSS in the "head" of your HTML document, so the inline style ensures your emails look perfect no matter what device your subscriber is using.
 
 Here’s what a basic stylesheet using both embedded and inline styles looks like:
  
@@ -127,6 +128,8 @@ Embedded styles
     }
 </style>
 </head>
+
+
 
 Inline styles
 <table width="640" border="0" cellpadding="0" cellspacing="0">
@@ -151,9 +154,11 @@ For a more exhaustive list of what will work in your mobile-friendly email templ
 
 Now, it’s time to revisit our earlier example of an email layout that’s been ‘narrowed down’ and stacked for a mobile display. Here’s the design in iPhone Xs:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-coding-mobile-emails.png?raw=true" width="510"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-coding-mobile-emails.png?raw=true" width="300"/></a>
      
 In this example, we’ve applied the tablescale class to HTML tables containing the text and images. Below is a snippet of code that contains two @media queries, creating two breakpoints for mobile devices:
+
+<div style="page-break-after: always;"></div>
      
 ```html
 <style type="text/css">
@@ -213,6 +218,8 @@ While two-column layouts often allow more content to be featured above the fold 
 
 One of the golden rules of email design is ‘where possible, use HTML attributes instead of CSS’. Whereas CSS support can be fairly flaky across the gamut of email clients, attributes tend to be rock solid. For example, attributes like align=”left” and cellpadding=“10” are far more reliable than their approximate CSS equivalents, float: left; and padding: 10px;. It’s exactly these attributes we’ll be using when building our two-to-one column layout.
 
+<div style="page-break-after: always;"></div>
+
 Let’s look at such a layout in Outlook 2007:
      
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-1.png?raw=true" width="510"/></a>
@@ -244,7 +251,7 @@ Here’s the simplified code for the two-column layout so far:
 
 The rendered result:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-2.png?raw=true" width="510"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-2.png?raw=true" width="300"/></a>
 
 If the container table is 640px wide, you’ll get a two-column layout. But any skinnier than this and the right column will wrap under the left column. Make it the same width as the column tables (320px) and you’ve got a flush, one-column layout that fits an iPhone display exactly, with no zooming required.
 
@@ -268,6 +275,8 @@ The result is a responsive layout that displays two columns on desktop and web c
 On the web, many responsive sites convert luxurious long-form content into items compressed for mobile devices. This is typically by using a technique referred to as progressive disclosure. This involves hiding content behind an interactive element like a button or link, then displaying it on click or tap.
 
 Wikipedia uses progressive disclosure, as do a lot of mobile applications.
+
+<div style="page-break-after: always;"></div>
      
 Let’s say we have an email newsletter with multiple articles. In desktop email clients, we want a heading and text to display in each article, like so:
 
@@ -275,9 +284,13 @@ Let’s say we have an email newsletter with multiple articles. In desktop email
      
 However on mobile clients, we only want the heading to display, alongside a show/hide button (which toggles the text). This turns the email into an interactive table of contents, dramatically shortening the message length:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-4.png?raw=true" width="510"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-4.png?raw=true" width="300"/></a>
      
-To do this, we’ll firstly need to turn to our HTML code and create an article with a heading, some text, and a show/hide button. We’ll also add a couple of classes to display the show/hide buttons exclusively on mobile devices. Here’s a simplified version of the code used for each of the articles:
+To do this, we’ll firstly need to turn to our HTML code and create an article with a heading, some text, and a show/hide button. We’ll also add a couple of classes to display the show/hide buttons exclusively on mobile devices. 
+
+<div style="page-break-after: always;"></div>
+
+Here’s a simplified version of the code used for each of the articles:
      
 ```html
 <td>
@@ -302,6 +315,7 @@ In our stylesheet, we’ll hide the show/hide button when the email displays in 
 }
 ```
 To ensure that the show/hide buttons are only displayed on mobile devices, we’ll turn to our media query. Here’s the code, including the earlier .mobileshow and .mobilehidesnippet and some webkit-friendly button styling for good measure:
+
 ```css
 @media only screen and (max-device-width: 480px) {
     .mobileshow a, .mobilehide a {
@@ -353,7 +367,7 @@ This problem occurs when Microsoft Word is used to render an email, and is most 
 
 Using our previous code examples, let’s create a truly responsive template that works both in mobile and desktop.
 
-The first step is to enable VML or Vector Markup Language, and scaled images in the <head> of your email.
+The first step is to enable VML or Vector Markup Language, and scaled images in the "head" of your email.
      
 ```css
 @media only screen and (max-device-width: 480px) {
@@ -376,7 +390,7 @@ The first step is to enable VML or Vector Markup Language, and scaled images in 
     </xml>
 <![endif]-->
 ```
-The second step to fix this issue is to add inline styles to your <tables> and other tags such as the image tag, by re-identifying the width. A general rule of thumb, if you declare the width as anything other than 100% in a tag you should re-identify within a style=.
+The second step to fix this issue is to add inline styles to your "tables" and other tags such as the image tag, by re-identifying the width. A general rule of thumb, if you declare the width as anything other than 100% in a tag you should re-identify within a style.
 
 Here’s the code we created for our two-column layout with the added inline-styles.
      
@@ -430,9 +444,7 @@ This provides the ability to target devices with obsessive precision. Create an 
 Our friend Andy Clarke created a wonderful [boilerplate for targeting popular devices](https://stuffandnonsense.co.uk/blog/this_is_the_new_320_and_up). It’s a great starting point for designing and building email designs that aren’t limited to two views each side of 480px.
 
 ### Being paranoid about Android
-Despite the words stated in the previous section, there are those who are critical of focusing on creating layouts around fixed widths like 480px, commonly known in the industry as ‘breakpoints’. As Marc Drummond argues:
-
-“If you are using responsive web design techniques (and you probably should be!), then this means that using default media query device-width breakpoints is mostly pointless.”
+Despite the words stated in the previous section, there are those who are critical of focusing on creating layouts around fixed widths like 480px, commonly known in the industry as ‘breakpoints’. As Marc Drummond argues: “If you are using responsive web design techniques (and you probably should be!), then this means that using default media query device-width breakpoints is mostly pointless.”
 — Marc Drummond, “[Responsive web design default breakpoints are dead](https://www.marcdrummond.com/responsive-web-design/2011/12/29/default-breakpoints-are-dead)”
 
 Marc acknowledges that there are plenty of breakpoints that exist outside of something like [Andy Clarke’s earlier boilerplate](https://stuffandnonsense.co.uk/blog/320_and_up) — particularly amongst Android devices. Besides, new mobile devices come out all the time, so the media query you’re using to target the top-of-the-line Android handset today may be redundant tomorrow.
@@ -447,6 +459,8 @@ By using a simple media query that applies a percentage width to elements—inst
 Finally, a word of advice: While it’s very easy to become fanatical about tailoring your responsive email design for specific devices, don’t lose track of the big picture.
 
 If 85% of your mobile-toting subscribers are viewing your email in 320px x 480px viewports, don’t feel like you have to create a @media query for every device. Creating a fluid design that can scale using a combination of percentages and defined pixel widths you will be able to cover a large percentage of your subscribers.
+
+<div style="page-break-after: always;"></div>
      
 
 💾 Optimizing images for mobile
@@ -503,7 +517,6 @@ xmlns:v="urn:schemas-microsoft-com:vml"
 xmlns:o="urn:schemas-microsoft-com:office:office">
 
 <head>
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--[if !mso]><!-->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -535,7 +548,7 @@ xmlns:o="urn:schemas-microsoft-com:office:office">
 
 Next we’ll set up the tables and background image.
 
-Within the <td> is where we’ll add a style and input our background image, declaring the background-position, background-size, and width.
+Within the "td" is where we’ll add a style and input our background image, declaring the background-position, background-size, and width.
 
 This code will give your email a solid base that will render correctly in Gmail and Apple Mail, including iPhone. But we’re not done yet, we need to make this background bulletproof for Outlook.
 
@@ -544,21 +557,21 @@ This code will give your email a solid base that will render correctly in Gmail 
 ### Background images in Outlook: bulletproof backgrounds
 Stig Morten Myre developed a popular technique to create these bulletproof backgrounds, and even created a handy background image builder. The additional VML, Microsoft’s Vector Markup Language, will allow our background image to render correctly in Outlook, specifically 2007-2019.
 
-If your image is a simple repeated pattern or isn’t required to line up in a particular way, then use the same url link for both your <td> and VML.
+If your image is a simple repeated pattern or isn’t required to line up in a particular way, then use the same url link for both your "td" and VML.
 
-However, if you don’t have a repeated pattern background, it’s recommended to have two versions of your image. The first image that’s linked in your <td> should be double the size (i.e. If your email body is 600px wide, your image should be 1200px to render correctly on Retina displays like the new iPhone). The second image that’s included in your VML should be the exact size (i.e. email is 600px wide, then image is 600px wide).
+However, if you don’t have a repeated pattern background, it’s recommended to have two versions of your image. The first image that’s linked in your "td" should be double the size (i.e. If your email body is 600px wide, your image should be 1200px to render correctly on Retina displays like the new iPhone). The second image that’s included in your VML should be the exact size (i.e. email is 600px wide, then image is 600px wide).
 
 Here’s how this could look: In this first example, the same url is used for both, with image size at 1200px wide.
 
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-optimizing-images-for-mobile-3.png?raw=true" width="510"/></a>
 
-In this comparison, a different url is used in the <td>. The image size is 1200px, the VML image url is 600px.
+In this comparison, a different url is used in the "td". The image size is 1200px, the VML image url is 600px.
 
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-optimizing-images-for-mobile-4.png?raw=true" width="510"/></a>
 
 While both examples allow for enough room around the live text, the second example is more visually striking and will more accurately mimic the intended layout and design.
 
-Let’s break down what’s happening here. First, we’ll create a conditional statement <!--[if gte mso 9]>. This code creates an if then statement, showing that if Microsoft Office then replace with the following code.
+Let’s break down what’s happening here. First, we’ll create a conditional statement [if gte mso 9]. This code creates an if then statement, showing that if Microsoft Office then replace with the following code.
 
 Next we’ll declare that this is VML, and set the style with width and height that is appropriate for your selected image. We’ll use the v:fill tag to identify what image URL will be used.
 
@@ -612,8 +625,10 @@ So let’s put it all together.
 
 It’s generally recommended that images be resized to fit within a viewport of mobile devices. But there are special occasions when your design doesn’t allow this, resulting in a small image with illegible text.
 
+<div style="page-break-after: always;"></div>
+
 ### Using unique images for mobile devices
-If using a background image with live text (as seen in the example above) is not an option, you can create a unique image specifically for mobile devices. This can be accomplished by surrounding the image in a table cell or <div>, then creating a media query that hides the original and shows another header image as a background image instead:
+If using a background image with live text (as seen in the example above) is not an option, you can create a unique image specifically for mobile devices. This can be accomplished by surrounding the image in a table cell or "div", then creating a media query that hides the original and shows another header image as a background image instead:
  
 ```css
 @media only screen and (max-device-width: 479px) {
@@ -636,6 +651,8 @@ HTML
 </table>
 ```
  
+<div style="page-break-after: always;"></div>
+
 Here’s how things look before and after the header images have been swapped out:
 
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-optimizing-images-for-mobile-6.png?raw=true" width="510"/></a>
@@ -645,7 +662,11 @@ An advantage to using this technique is that you can shorten the length of email
 ### Resizing images for fluid layouts
 The issue with the background image swap method above is that it’s really only effective with static-width email designs.
 
-These days, mobile devices can come in all sorts of shapes and sizes, therefore making fluid email layouts a popular option. While the obvious solution seems to be to set background-size: 100% in the earlier media query, as [Elliot Jay Stocks points out](https://elliotjaystocks.com/blog/better-background-images-for-responsive-web-design/), the better option is to use background-size: cover:
+These days, mobile devices can come in all sorts of shapes and sizes, therefore making fluid email layouts a popular option. 
+
+<div style="page-break-after: always;"></div>
+
+While the obvious solution seems to be to set background-size: 100% in the earlier media query, as [Elliot Jay Stocks points out](https://elliotjaystocks.com/blog/better-background-images-for-responsive-web-design/), the better option is to use background-size: cover:
 
 ```css
 @media only screen and (max-width: 600px) {
@@ -673,6 +694,8 @@ These days, mobile devices can come in all sorts of shapes and sizes, therefore 
 Our final tip is in regards to getting images to display as sharply as possible on Apple’s [Retina displays](https://en.wikipedia.org/wiki/Retina_display). This is one that we’ve covered before, but given that these displays aren’t going away anytime soon, it’s worth a recap.
 
 The trick is to create key images at twice the size you actually plan on displaying them, thus making the image look super crisp on iPhone 11 and iPad displays. For example, using our earlier background image hack, we’d create a header image that was really 600px x 300px (e.g. https://image.url600@2x.jpg), but then shrink it down for mobile screens.
+
+<div style="page-break-after: always;"></div>
 
 Here’s how the media query would look:
  
@@ -728,6 +751,8 @@ We’ll cover a couple of pointers, and feature a simple example you can use as 
 
 - Take a stand on scale—Finally, a lot of these tips here haven’t been specific to forms, but more like web design in general. Included is the idea of setting the initial scale or zoom on a mobile device using a viewport meta tag, especially when building standalone forms. When applied, they can prevent the user accidentally zooming in unnecessarily and losing sight of most of the form. Here’s what a typical viewport meta tag looks like in the head of an HTML page: <meta name = “viewport” content = “width = device-width, user-scalable = no” />. For a couple of variants on this, check out Apple’s viewport meta tag documentation.
 
+<div style="page-break-after: always;"></div>
+
 ### Creating mobile-friendly plain-text email
 Not wanting to limit our advice to HTML email design, we wanted to add some pointers for optimizing plain-text campaigns.
 
@@ -738,6 +763,8 @@ When it comes to formatting plain-text emails, there are two camps: those who ad
 However, on mobile devices, things are very different. In Apple Mail on iPhone, a 65-character line break combined with wrapping text results in a very jagged message. It’s arguably worse than reading an infinitely long line of text.
 
 If you’re sending HTML email with a plain-text version containing line breaks, most mobile email clients won’t ever have to fall back to viewing it. So it isn’t quite time to undo the app’s handiwork when it automatically creates a nicely formatted text-version of your HTML campaign. However, if you’re sending plain-text campaigns only, it’s worth having a look at your email client usage reports when deciding which way to go. If you have plenty of subscribers reading their email on a mobile device, it may not be an appealing idea to add your own line breaks.
+
+<div style="page-break-after: always;"></div>
 
 💡 Case study: Twitter
 -----------
@@ -764,28 +791,27 @@ If you’ve read much on responsive email design, you may know that you add thes
     <td style="background-color:#e9eff2; padding: 30px 15px 0;">
         <table cellspacing="0" cellpadding="0" border="0" align="center" width="710" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; color: #333;">
 ```
+
 We’re going to bring them down to size by adding classes wrappertable, wrappercell and structure:
+
 ```html
 <table cellspacing="0" cellpadding="0" border="0" width="100%" class="wrappertable">
     <tbody>
         <tr>
-            <td style="background-color:#e9eff2; padding:30px 15px 0" class="wrappercell">
+                <td style="background-color:#e9eff2; padding:30px 15px 0" class="wrappercell">
                 <table cellspacing="0" cellpadding="0" border="0" align="center" width="710" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;color:#333" class="structure">
 ```
+
 Now that we have something to target, let’s get to work with these classes in our media query:
+
 ```css
 @media only screen and (max-device-width: 479px) {
-    body {
-        width: 320px !important;
-    }
-    .wrappertable {
-        width: 320px !important;
-    }
-    .structure {
-        width: 300px !important;
-    }
+    body { width: 320px !important; }
+    .wrappertable { width: 320px !important; }
+    .structure { width: 300px !important; }
 }
 ```
+
 The widths used above are significant, as on the iPhone in particular, the display width is 320px in portrait orientation. By narrowing the email layout to 320px, it will be viewed at 100% zoom by default, which means that not only will the whole design be visible, but text and images will look crisp, too.
 
 ### Putting a harness on the header image
@@ -809,7 +835,11 @@ You may have noticed the class logo on https://yourdomain.com/logo-left.png and 
 
 At last, we’ve got a header image and layout that’s trimmed down to size on mobile screens.
 
-Another way to get the same result without slicing images is to create a table row or <tr> with a background color and then place your logo in the "td". Here’s what that code would look like:
+Another way to get the same result without slicing images is to create a table row or "tr" with a background color and then place your logo in the "td". 
+
+<div style="page-break-after: always;"></div>
+
+Here’s what that code would look like:
  
 ```html
 <table align="center" width="600" bgcolor="#3BC5F5" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width: 600px;"> 
@@ -824,7 +854,7 @@ Another way to get the same result without slicing images is to create a table r
 
 ```
  
-Now, on top of the above re-factors, we added some extra padding around elements and adjusted font sizes to taste. But ultimately, most of the major changes were achieved with a couple of lines of code and only a few minutes’ work. The results speak for themselves (pictured).
+Now, on top of the above re-factors, we added some extra padding around elements and adjusted font sizes to taste. 
 
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-case-study-twitter.png?raw=true" width="510"/></a>
  
