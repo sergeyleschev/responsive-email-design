@@ -10,7 +10,7 @@ Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google 
 ---
 <div style="page-break-after: always;"></div>
 
-| Chapter |
+| Topics |
 | ------------------------------------------------------ | 
 | [🐝 Which mobile devices can you design for](https://github.com/sergeyleschev/responsive-email-design/blob/main/sergeyleschev-responsive-email-design.md#-which-mobile-devices-can-you-design-for) | 
 | [👫 Design techniques for mobile optimization](https://github.com/sergeyleschev/responsive-email-design/blob/main/sergeyleschev-responsive-email-design.md#-design-techniques-for-mobile-optimization)                                 |
