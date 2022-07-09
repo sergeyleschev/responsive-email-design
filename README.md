@@ -125,14 +125,14 @@ Embedded styles
 </head>
 
 Inline styles
-    <table width="640" border="0" cellpadding="0" cellspacing="0">
-    <tr>
-    <td>
-    <table width="320" border="0" cellspacing="0" cellpadding="20" align="left" >
-    <tr>
-    <td width="320" style="font-family: Helvetica, Arial, 'sans-serif'; font-size: 33px; color:#1B1B1B; padding-left: 30px; padding-right: 30px; font-weight: 500; line-height: 40px; letter-spacing:.5px; width: 600px;">Content Example</td>
-    </tr>
-    </table>
+<table width="640" border="0" cellpadding="0" cellspacing="0">
+<tr>
+<td>
+<table width="320" border="0" cellspacing="0" cellpadding="20" align="left" >
+<tr>
+<td width="320" style="font-family: Helvetica, Arial, 'sans-serif'; font-size: 33px; color:#1B1B1B; padding-left: 30px; padding-right: 30px; font-weight: 500; line-height: 40px; letter-spacing:.5px; width: 600px;">Content Example</td>
+</tr>
+</table>
 ```
      
 Embedded styles are what help you create mobile-responsive layouts. In the example above, an @media declaration is made following mobile-specific CSS styles.
