@@ -20,7 +20,7 @@ Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google 
 | ------------------------------------------------------ | 
 | [🐝 Which mobile devices can you design for](#-which-mobile-devices-can-you-design-for) | 
 | [👫 Design techniques for mobile optimization](#-design-techniques-for-mobile-optimization)                                 |
-| [🎶 Coding mobile emails](#-coding-mobile-emails)                         |
+| [📧 Coding mobile emails](#-coding-mobile-emails)                         |
 | [🍫 Building responsive layouts](#-building-responsive-layouts)                               |
 | [💐 Targeting devices with media queries](#-targeting-devices-with-media-queries)                               |
 | [💾 Optimizing images for mobile](#-optimizing-images-for-mobile)                                 |
@@ -60,17 +60,12 @@ With this in mind, we present to you a non-exhaustive list of mobile email clien
 | Client | Media query support |
 | ------------------------------------------------------ | ------------------------------------------------------ | 
 | Microsoft Outlook Exchange third-party app (Android) | No |
-| Gmail mobile app (all platforms) 
-There are limitations: [see supported CSS properties](https://developers.google.com/gmail/design/reference/supported_css) | Yes |
+| Gmail mobile app (all platforms). There are limitations: [see supported CSS properties](https://developers.google.com/gmail/design/reference/supported_css) | Yes |
 | Yahoo! Mail mobile app (all platforms) | No |
 
 👫 Design techniques for mobile optimization
 ----------
-Let’s cover the visual side of creating a mobile-optimized email newsletter and dive deep into coding. This will not only help you make informed design decisions when designing your email newsletter, but it will make it that much easier to conceptualize the techniques we’ll be discussing later on.
-
-We’ve already started talking about responsive email design. If you’re familiar with the use of this term in the context of web design, then you’ll be pleased to know that we’ll be using the same concepts and techniques here for email. If things like adaptive layouts are new to you, I highly recommend reading this primer by A List Apart.
-
-For this guide, we’ll be designing two CSS layouts of the same newsletter: one layout that looks great in webmail and desktop clients, and another layout that can be easily read on the smaller mobile device screens.
+We’ll be designing two CSS layouts of the same newsletter: one layout that looks great in webmail and desktop clients, and another layout that can be easily read on the smaller mobile device screens.
 
 For example, here’s an HTML email in Outlook:
 
@@ -98,7 +93,7 @@ Designing for mobile isn’t simply a matter of taking a crack at writing mobile
 When mocking up an HTML email or template, our advice is to create three sketches or wireframes: one of the desktop and webmail layout, one for the tablet layout, and one for a mobile layout. Building these three layouts will allow you to see how your content will break on various devices, and it will help determine what media queries you’ll need.
 
 
-🎶 Coding mobile emails
+📧 Coding mobile emails
 -----------
 
 When web designers or developers talk about stylesheets or CSS (Cascading Style Sheets, they’re usually referring to an external stylesheet. And while that works for websites it’s not the best for email.
@@ -119,17 +114,18 @@ Embedded styles
 <style type="text/css">
     /* regular CSS styles go here */
 
-@media only screen and (max-device-width: 640px) {
+    @media only screen and (max-device-width: 640px) {
         /* tablet-larger phone CSS styles go here */
     }
 
-@media only screen and (max-device-width: 479px) {
+    @media only screen and (max-device-width: 479px) {
         /* smaller-mobile-specific CSS styles go here */
+    }
 </style>
 </head>
 
 Inline styles
-<table width="640" border="0" cellpadding="0" cellspacing="0">
+    <table width="640" border="0" cellpadding="0" cellspacing="0">
     <tr>
     <td>
     <table width="320" border="0" cellspacing="0" cellpadding="20" align="left" >
@@ -157,21 +153,22 @@ In this example, we’ve applied the tablescale class to HTML tables containing 
      
 ```html
 <style type="text/css">
-/* regular CSS styles go here */
-@media only screen and (max-width: 640px) { 
-/* mobile-specific CSS styles go here */
-   .tablescale {
-width: 440px !important;
-margin: 0 !important;
-}
+    /* regular CSS styles go here */
+    @media only screen and (max-width: 640px) { 
+        /* mobile-specific CSS styles go here */
+        .tablescale {
+            width: 440px !important;
+            margin: 0 !important;
+        }
+    }
 
-}
-@media only screen and (max-width: 479px) {
-/* mobile-specific CSS styles go here */
-.tablescale {
-width: 100% !important;
-margin: 0 !important;
-}
+    @media only screen and (max-width: 479px) {
+        /* mobile-specific CSS styles go here */
+        .tablescale {
+            width: 100% !important;
+            margin: 0 !important;
+        }
+    }
 </style>
 ```
 The tablescale class does something really interesting here. When the email is viewed on a device with a screen width of 640px or wider, it has no effect. However, when the screen width is 640px or less, it narrows down the table widths to 440px. This same action is taken at the second breakpoint at 479px, giving the table a width of 100%.
@@ -184,17 +181,19 @@ You could also feature other declarations, like:
 <style type="text/css">
 
 @media only screen and (max-device-width: 640px) {
-/* mobile-specific CSS styles go here */
-.tablescale { width: 440px !important; margin: }
-.imgscale { width: 100% !important;  }
+    /* mobile-specific CSS styles go here */
+    .tablescale { width: 440px !important; margin: }
+    .imgscale { width: 100% !important;  }
 }
 
 @media only screen and (max-device-width: 479px) {
 /* mobile-specific CSS styles go here */
-.tablescale { width: 325px !important; margin: 0 !important; }
-.imgscale { width: 100% !important; height: auto !important;
-    margin: auto !important;
-  }
+    .tablescale { width: 325px !important; margin: 0 !important; }
+    .imgscale { 
+        width: 100% !important; 
+        height: auto !important;
+        margin: auto !important;
+    }
 }
 </style>
 ```
@@ -223,18 +222,18 @@ Here’s the simplified code for the two-column layout so far:
 ```html
 <table width="640" border="0" cellpadding="0" cellspacing="0">
     <tr>
-    <td>
-    <table width="300" border="0" cellspacing="0" cellpadding="10" align="left">
-    <tr>
-    <td>Column Left Content</td>
-    </tr>
-    </table>
-    <table width="300" border="0" cellspacing="0" cellpadding="20" align="right">
-    <tr>
-    <td><img src=”IMG_URL” width=”280”></td>
-    </tr>
-    </table>
-    </td>
+        <td>
+        <table width="300" border="0" cellspacing="0" cellpadding="10" align="left">
+            <tr>
+                <td>Column Left Content</td>
+            </tr>
+        </table>
+        <table width="300" border="0" cellspacing="0" cellpadding="20" align="right">
+            <tr>
+                <td><img src=”IMG_URL” width=”280”></td>
+            </tr>
+        </table>
+        </td>
     </tr>
 </table>
 ```
@@ -250,14 +249,14 @@ One-line media query to our HTML code:
 ```html
 <style type="text/css">
     @media only screen and (max-device-width: 480px) {
-    .tablescale {
-    width:100% !important;
-Margin: 0 !important;
+        .tablescale {
+            width:100% !important;
+            Margin: 0 !important;
+        }
     }
-    }
-    </style>
+</style>
 
-    <table width="640" border="0" cellpadding="0" cellspacing="0" class="tablescale">
+<table width="640" border="0" cellpadding="0" cellspacing="0" class="tablescale">
 ```
 The result is a responsive layout that displays two columns on desktop and web clients, then switches to one column in iPhone Mail and the default Android email client.
 
@@ -286,7 +285,7 @@ To do this, we’ll firstly need to turn to our HTML code and create an article 
     </p>
     <a target="_blank" href="https://yourdomain.com">Read more...</a>
     </div>
-    </td>
+</td>
 ```
      
 Take note the classes mobilehide, mobileshow and article—these will be handling most of the action.
@@ -296,37 +295,37 @@ In our stylesheet, we’ll hide the show/hide button when the email displays in 
 ```css
 .mobileshow a, .mobilehide a {
     display: none !important;
-    }
+}
 ```
 To ensure that the show/hide buttons are only displayed on mobile devices, we’ll turn to our media query. Here’s the code, including the earlier .mobileshow and .mobilehidesnippet and some webkit-friendly button styling for good measure:
 ```css
 @media only screen and (max-device-width: 480px) {
     .mobileshow a, .mobilehide a {
-    display: block !important;
-    color: #fff !important;
-    background-color: #aaa;
-    border-radius: 20px;
-    padding: 0 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-family: "Helvetica Neue", Helvetica, sans-serif;
-    font-size: 11px;
-    position: absolute;
-    top: 25px;
-    right: 10px;
-    text-align: center;
-    width: 40px;
+        display: block !important;
+        color: #fff !important;
+        background-color: #aaa;
+        border-radius: 20px;
+        padding: 0 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: "Helvetica Neue", Helvetica, sans-serif;
+        font-size: 11px;
+        position: absolute;
+        top: 25px;
+        right: 10px;
+        text-align: center;
+        width: 40px;
     }
     .article {
-    display: none;
+        display: none;
     }
     a.mobileshow:hover {
-    visibility: hidden;
+        visibility: hidden;
     }
     .mobileshow:hover + .article, .article:hover {
-    display: inline !important;
+        display: inline !important;
     }
-    }
+}
 ```
      
 And, if things go well, the result is an email with show/hide buttons that toggle content on the iPhone.
@@ -380,20 +379,20 @@ Here’s the code we created for our two-column layout with the added inline-sty
 ```html
 <table width="640" border="0" cellpadding="0" cellspacing="0" style=”width: 640px;”>
     <tr>
-    <td>
-    <table width="300" border="0" cellspacing="0" cellpadding="10" align="left" style=”width: 300px;”>
-    <tr>
-    <td width="300" align="left" style=”width: 300px;”>Column Left Content</td>
+        <td>
+            <table width="300" border="0" cellspacing="0" cellpadding="10" align="left" style=”width: 300px;”>
+                <tr>
+                    <td width="300" align="left" style=”width: 300px;”>Column Left Content</td>
+                </tr>
+            </table>
+            <table width="300" border="0" cellspacing="0" cellpadding="20" align="right" style=”width: 300px;”>
+                <tr>
+                    <td width="300" align="left" style=”width: 300px;”><img src=”IMG_URL” width=”280” style=”display: inline-block; width: 280px;”></td>
+                </tr>
+            </table>
+        </td>
     </tr>
-    </table>
-    <table width="300" border="0" cellspacing="0" cellpadding="20" align="right" style=”width: 300px;”>
-    <tr>
-    <td width="300" align="left" style=”width: 300px;”><img src=”IMG_URL” width=”280” style=”display: inline-block; width: 280px;”></td>
-    </tr>
-    </table>
-    </td>
-    </tr>
-    </table>
+</table>
 ```
 
 Now that we have that new code, here’s the same rendering above with 120 DPI, now totally responsive with the new code additions:
@@ -492,8 +491,6 @@ Next, we’ll insert our 120 DPI scaling to target Outlook 2007-2013 and ensure 
 ```
  
 The top of your email should look something like this:
-
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/sergeyleschev-optimizing-images-for-mobile-1.jpg?raw=true" width="510"/></a>
  
 ```html
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -509,25 +506,24 @@ xmlns:o="urn:schemas-microsoft-com:office:office">
 <!--<![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Email Sample</title>
+
 <style type="text/css">
-html {
-width: 100%;
-}
+    html { width: 100%; }
 
-@media only screen and (max-width: 600px) {
-/* Table styles go here */
-}
+    @media only screen and (max-width: 600px) {
+        /* Table styles go here */
+    }
 
-@media only screen and (max-width: 479px) {
-/* mobile styles go here */
-}
+    @media only screen and (max-width: 479px) {
+        /* mobile styles go here */
+    }
 </style>
 
 <!--[if gte mso 9]><xml>
-<o:OfficeDocumentSettings>
-<o:AllowPNG/>
-<o:PixelsPerInch>96</o:PixelsPerInch>
-</o:OfficeDocumentSettings>
+    <o:OfficeDocumentSettings>
+    <o:AllowPNG/>
+    <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
 </xml><![endif]—>
 
 </head>
@@ -583,9 +579,6 @@ Here’s what it should look like:
  
 So let’s put it all together.
  
-
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/sergeyleschev-optimizing-images-for-mobile-5.jpg?raw=true" width="510"/></a>
- 
 ```html
 <table class="tablescale" width="600" align="center" bgcolor="#ffffff" cellpadding="0" cellspacing="0" border="0">
     <tr>
@@ -620,22 +613,22 @@ If using a background image with live text (as seen in the example above) is not
  
 ```css
 @media only screen and (max-device-width: 479px) {
-.headerimg {
-    background-image: url(https://yourdomain.com/images/header-325.png);
-    width: 100% !important;
-    height: 115px !important;
-}
-.imgheader {
-    display: none;
-}
+    .headerimg {
+        background-image: url(https://yourdomain.com/images/header-325.png);
+        width: 100% !important;
+        height: 115px !important;
+    }
+    .imgheader {
+        display: none;
+    }
 }
 HTML
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td class="headercell">
-    <img class=”imgheader” src="https://yourdomain.com/images/header.png" border="0" width="600" />
-</td>
-</tr>
+    <tr>
+        <td class="headercell">
+            <img class=”imgheader” src="https://yourdomain.com/images/header.png" border="0" width="600" />
+        </td>
+    </tr>
 </table>
 ```
  
@@ -652,25 +645,23 @@ These days, mobile devices can come in all sorts of shapes and sizes, therefore 
 
 ```css
 @media only screen and (max-width: 600px) {
-
-.imgheader {
-    width: 100% !important;
-}
+    .imgheader {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (max-width: 479px) {
+    .headerimg {
+        background-image: url(https://engage.sailthru.com/rs/500-BIA-880/images/hero_img_mobile.jpg);
+        width: 100% !important;
+        height: 300px !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
 
-.headerimg {
-    background-image: url(https://engage.sailthru.com/rs/500-BIA-880/images/hero_img_mobile.jpg);
-    width: 100% !important;
-    height: 300px !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-.imgheader {
-    display: none;
-}
-
+    .imgheader {
+        display: none;
+    }
 }
 ```
  
@@ -683,25 +674,22 @@ Here’s how the media query would look:
  
 ```css
 @media only screen and (max-width: 600px) {
-
-.imgheader {
-    width: 100% !important;
-}
+    .imgheader {
+        width: 100% !important;
+    }
 }
 
 @media only screen and (max-width: 479px) {
-
-.headerimg {
-    background-image: url(https://image.url200@2x.jpg);
-    width: 100% !important;
-    height: 150px !important;
-    background-position: center !important;
-    background-repeat: no-repeat !important;
-}
-.imgheader {
-    display: none;
-}
-
+    .headerimg {
+        background-image: url(https://image.url200@2x.jpg);
+        width: 100% !important;
+        height: 150px !important;
+        background-position: center !important;
+        background-repeat: no-repeat !important;
+    }
+    .imgheader {
+        display: none;
+    }
 }
 ```
  
@@ -769,26 +757,29 @@ If you’ve read much on responsive email design, you may know that you add thes
 ```html
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
 <tr>
-    <td style="background-color:#e9eff2; padding: 30px 15px 0;"><table cellspacing="0" cellpadding="0" border="0" align="center" width="710" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; color: #333;">
+    <td style="background-color:#e9eff2; padding: 30px 15px 0;">
+        <table cellspacing="0" cellpadding="0" border="0" align="center" width="710" style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 16px; color: #333;">
 ```
 We’re going to bring them down to size by adding classes wrappertable, wrappercell and structure:
 ```html
 <table cellspacing="0" cellpadding="0" border="0" width="100%" class="wrappertable">
-<tbody>
-<tr>
-<td style="background-color:#e9eff2; padding:30px 15px 0" class="wrappercell"><table cellspacing="0" cellpadding="0" border="0" align="center" width="710" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;color:#333" class="structure">
+    <tbody>
+        <tr>
+            <td style="background-color:#e9eff2; padding:30px 15px 0" class="wrappercell">
+                <table cellspacing="0" cellpadding="0" border="0" align="center" width="710" style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:16px;color:#333" class="structure">
 ```
 Now that we have something to target, let’s get to work with these classes in our media query:
 ```css
 @media only screen and (max-device-width: 479px) {
-body {
-    width: 320px !important;
-}
-.wrappertable {
-    width: 320px !important;
-}
-.structure {
-    width: 300px !important;
+    body {
+        width: 320px !important;
+    }
+    .wrappertable {
+        width: 320px !important;
+    }
+    .structure {
+        width: 300px !important;
+    }
 }
 ```
 The widths used above are significant, as on the iPhone in particular, the display width is 320px in portrait orientation. By narrowing the email layout to 320px, it will be viewed at 100% zoom by default, which means that not only will the whole design be visible, but text and images will look crisp, too.
@@ -814,17 +805,17 @@ You may have noticed the class logo on https://yourdomain.com/logo-left.png and 
 
 At last, we’ve got a header image and layout that’s trimmed down to size on mobile screens.
 
-Another way to get the same result without slicing images is to create a table row or <tr> with a background color and then place your logo in the <td>. Here’s what that code would look like:
+Another way to get the same result without slicing images is to create a table row or <tr> with a background color and then place your logo in the "td". Here’s what that code would look like:
  
 ```html
 <table align="center" width="600" bgcolor="#3BC5F5" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse; mso-table-lspace:0pt; mso-table-rspace:0pt; width: 600px;"> 
-<tr> 
-<td width="600" align="left" valign="bottom" class="logo" style="margin: 0; padding-bottom: 20px; padding-top: 20px; padding-left: 30px; font-size:18px; color:#ffffff; font-family: Helvetica, Arial, sans-serif; width: 600px; ">
-<a href="url_twitter" target="_blank"> 
-<img class="logo" src="twitter_img_logo.png" width="165" alt="Twitter" border="0" style="display: inline-block; color: #ffffff; width: 165px; color: #ffffff; font-size: 20px; line-height: 26px;" /> 
-    </a>
-    </td> 
-</tr> 
+    <tr> 
+        <td width="600" align="left" valign="bottom" class="logo" style="margin: 0; padding-bottom: 20px; padding-top: 20px; padding-left: 30px; font-size:18px; color:#ffffff; font-family: Helvetica, Arial, sans-serif; width: 600px; ">
+            <a href="url_twitter" target="_blank"> 
+            <img class="logo" src="twitter_img_logo.png" width="165" alt="Twitter" border="0" style="display: inline-block; color: #ffffff; width: 165px; color: #ffffff; font-size: 20px; line-height: 26px;" /> 
+            </a>
+        </td> 
+    </tr> 
 </table>
 
 ```
