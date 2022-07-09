@@ -538,7 +538,7 @@ This code will give your email a solid base that will render correctly in Gmail 
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/sergeyleschev-optimizing-images-for-mobile-2.jpg?raw=true" width="510"/></a>
 
 ### Background images in Outlook: bulletproof backgrounds
-Campaign Monitor’s Stig Morten Myre developed a popular technique to create these bulletproof backgrounds, and even created a handy background image builder. The additional VML, Microsoft’s Vector Markup Language, will allow our background image to render correctly in Outlook, specifically 2007-2019.
+Stig Morten Myre developed a popular technique to create these bulletproof backgrounds, and even created a handy background image builder. The additional VML, Microsoft’s Vector Markup Language, will allow our background image to render correctly in Outlook, specifically 2007-2019.
 
 If your image is a simple repeated pattern or isn’t required to line up in a particular way, then use the same url link for both your <td> and VML.
 
