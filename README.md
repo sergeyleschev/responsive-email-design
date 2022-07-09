@@ -17,14 +17,14 @@ Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google 
 
 | Chapter |
 | ------------------------------------------------------ | 
-| [🐝 Which mobile devices can you design for](#) | 
-| [👫 Design techniques for mobile optimization](#)                                 |
-| [🎶 Coding mobile emails](#)                         |
-| [🍫 Building responsive layouts](#)                               |
-| [💐 Targeting devices with media queries](#)                               |
-| [💾 Optimizing images for mobile](#)                                 |
-| [👓 Optimizing your subscribe forms](#)                               |
-| [💡 Case study: Twitter](#)                               |
+| [🐝 Which mobile devices can you design for](#-which-mobile-devices-can-you-design-for) | 
+| [👫 Design techniques for mobile optimization](#-design-techniques-for-mobile-optimization)                                 |
+| [🎶 Coding mobile emails](#-coding-mobile-emails)                         |
+| [🍫 Building responsive layouts](#-building-responsive-layouts)                               |
+| [💐 Targeting devices with media queries](#-targeting-devices-with-media-queries)                               |
+| [💾 Optimizing images for mobile](#-optimizing-images-for-mobile)                                 |
+| [👓 Optimizing your subscribe forms](#-optimizing-your-subscribe-forms)                               |
+| [💡 Case study: Twitter](#-case-study-twitter)                               |
 
 
 🐝 Which mobile devices can you design for
