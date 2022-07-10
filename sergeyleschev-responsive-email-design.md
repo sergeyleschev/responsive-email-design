@@ -1,20 +1,15 @@
 # S.Leschev Responsive Email Design
 Google Engineering Level: L6+
 
-Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. 
+Design large-scale systems / 2022 / Responsive Email Design
 
 ## 🏆 Awards
 ### Ranking #Dev: Global TOP 300 ([Certificate](https://leetcode.com/sergeyleschev/))
-<a href="https://leetcode.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/sergeyleschev/blob/main/leetcode-ranking.png?raw=true" width="410"/></a>
+<a href="https://leetcode.com/sergeyleschev/"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/sergeyleschev/blob/main/leetcode-ranking.png?raw=true" width="410"/></a>
 
-<a href="https://leetcode.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/sergeyleschev/blob/main/leetcode-medals.png?raw=true" width="280"/></a>
-
-**Languages**: Swift, Shell, Database (T-SQL, PL/SQL, MySQL), Concurrency (Python3).
-
----
 <div style="page-break-after: always;"></div>
 
-| Topics |
+| Table of Contents |
 | ------------------------------------------------------ | 
 | [🐝 Which mobile devices can you design for](#-which-mobile-devices-can-you-design-for) | 
 | [👫 Design techniques for mobile optimization](#-design-techniques-for-mobile-optimization)                                 |
@@ -27,7 +22,7 @@ Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev.
 
 
 🐝 Which mobile devices can you design for
---------------------------
+------------------------------------------
 A quick caveat: The techniques listed here aren’t universally supported by all mobile email clients. As you may know, not all email clients were made equal—even on the same device, how an HTML email displays can vary radically from inbox to inbox.
 
 Thankfully, the iPhone and other Apple iOS devices can not only boast of near trouble-free email rendering, but also account for a large percentage of mobile email opens, too. However, with the latest release of iOS 13, Apple’s dark mode will pose new design and coding challenges to overcome so always remember to test your emails.
@@ -66,7 +61,7 @@ With this in mind, we present to you a non-exhaustive list of mobile email clien
 <div style="page-break-after: always;"></div>
 
 👫 Design techniques for mobile optimization
-----------
+--------------------------------------------
 We’ll be designing two CSS layouts of the same newsletter: one layout that looks great in webmail and desktop clients, and another layout that can be easily read on the smaller mobile device screens.
 
 For example, here’s an HTML email in Outlook:
@@ -99,7 +94,7 @@ When mocking up an HTML email or template, our advice is to create three sketche
 <div style="page-break-after: always;"></div>
 
 📧 Coding mobile emails
------------
+-----------------------
 
 When web designers or developers talk about stylesheets or CSS (Cascading Style Sheets, they’re usually referring to an external stylesheet. And while that works for websites it’s not the best for email.
 
@@ -210,7 +205,7 @@ Assuming that the examples in this guide have made sense so far, we’re going t
      
 
 🍫 Building responsive layouts
------------
+------------------------------
      
 While one-column HTML email layouts are generally the way to go when optimizing your newsletter for mobile devices, there’s an elegant way to create responsive two-column layouts, without resorting to mile-long stylesheets in media queries.
 
@@ -423,7 +418,7 @@ If you want to learn more about Outlook scaling issues, check out Courtney Fanti
 
 
 💐 Targeting devices with media queries
-----------
+---------------------------------------
 You may have noticed that we’ve been using two standard media queries in this guide: @media only screen and (max-device-width: 640px) { … } and @media only screen and (max-device-width: 479px) { … }. This is great for targeting Apple iPhones and other handheld devices that make up the majority of mobile email client share.
 
 But if you or your clients want to target tablets, larger-screen Android devices, and some of the more exotic screen resolutions in the mobile ecosystem, then you’ll need both unique media queries and unique styles to match.
@@ -464,7 +459,7 @@ If 85% of your mobile-toting subscribers are viewing your email in 320px x 480px
      
 
 💾 Optimizing images for mobile
------------
+-------------------------------
      
 While phone screen sizes have been steadily increasing over the years along with screen resolution, it can be tempting to include more and more images in your emails. But a word of caution: While images can bring an extra wow factor to your emails, images should always be thoughtfully added with accessibility and mobile load times top of mind.
 
@@ -733,7 +728,7 @@ You can help prevent slow load times with the Save for web options when you expo
 
 
 👓 Optimizing your subscribe forms
----------
+----------------------------------
      
 Optimizing your email campaigns for mobile isn’t just limited to making sure your newsletter can be read on small screens. After all, what’s the point of sending mobile-optimized campaigns if mobile users can’t subscribe to your lists in the first place?
 
@@ -767,7 +762,7 @@ If you’re sending HTML email with a plain-text version containing line breaks,
 <div style="page-break-after: always;"></div>
 
 💡 Case study: Twitter
------------
+----------------------
 Let’s put some of these techniques into practice by applying them to a real-world email. Not just any email, but one that’s sent to millions of people every day.
 
 In the not-so-distant past, Twitter’s email notifications were subpar on mobile devices. The problem was this: a combination of tiny text and wide layouts pushing out the zoom made them nearly unreadable on small screens.
