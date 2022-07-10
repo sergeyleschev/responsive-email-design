@@ -2,7 +2,7 @@
 <img itemprop="image" alt="Sergey Leschev" src="https://sergeyleschev.github.io/sergeyleschev.png" width=250/>
 Google Engineering Level: L6+
 
-Design large-scale systems / 2022 / Responsive Email Design
+Design large-scale systems / 2022
 
 ## 🏆 Awards
 ### Ranking #Dev: Global TOP 300 ([Certificate](https://leetcode.com/sergeyleschev/))
