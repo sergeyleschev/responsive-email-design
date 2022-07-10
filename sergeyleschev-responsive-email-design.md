@@ -42,7 +42,6 @@ Design large-scale systems / 2022
 | [👓 Optimizing your subscribe forms](#-optimizing-your-subscribe-forms)                               |
 | [💡 Case study: Twitter](#-case-study-twitter)                               |
 
-
 🐝 Which mobile devices can you design for
 ------------------------------------------
 A quick caveat: The techniques listed here aren’t universally supported by all mobile email clients. As you may know, not all email clients were made equal—even on the same device, how an HTML email displays can vary radically from inbox to inbox.
@@ -50,8 +49,6 @@ A quick caveat: The techniques listed here aren’t universally supported by all
 Thankfully, the iPhone and other Apple iOS devices can not only boast of near trouble-free email rendering, but also account for a large percentage of mobile email opens, too. However, with the latest release of iOS 13, Apple’s dark mode will pose new design and coding challenges to overcome so always remember to test your emails.
 
 With this in mind, we present to you a non-exhaustive list of mobile email clients and their support for media queries. For context, media query support enables you to use many of the responsive techniques that we’ll be covering in this guide.
-
-<div style="page-break-after: always;"></div>
 
 ### Default device email clients
 
@@ -73,6 +70,8 @@ With this in mind, we present to you a non-exhaustive list of mobile email clien
 | Windows Mail | Yes |
 | Samsung Email 6x | No |
 
+<div style="page-break-after: always;"></div>
+
 ### 3rd-party email clients
 | Client | Media query support |
 | ------------------------------------------------------ | ------------------------------------------------------ | 
@@ -80,15 +79,13 @@ With this in mind, we present to you a non-exhaustive list of mobile email clien
 | Gmail mobile app (all platforms). There are limitations: [see supported CSS properties](https://developers.google.com/gmail/design/reference/supported_css) | Yes |
 | Yahoo! Mail mobile app (all platforms) | No |
 
-<div style="page-break-after: always;"></div>
-
 👫 Design techniques for mobile optimization
 --------------------------------------------
 We’ll be designing two CSS layouts of the same newsletter: one layout that looks great in webmail and desktop clients, and another layout that can be easily read on the smaller mobile device screens.
 
 For example, here’s an HTML email in Outlook:
 
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-design-techniques-for-mobile-optimization-1.png?raw=true" width="510"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-design-techniques-for-mobile-optimization-1.png?raw=true" width="400"/></a>
 
 Below is the same email, only this time viewed in Apple’s iPhone Mail. As you can see, there are significant differences between the two layouts. The mobile version is skinnier, lacks visual clutter, and is just as readable as the desktop version. This can be attributed to the use of mobile-specific CSS:
 
@@ -113,8 +110,6 @@ Designing for mobile isn’t simply a matter of taking a crack at writing mobile
 
 When mocking up an HTML email or template, our advice is to create three sketches or wireframes: one of the desktop and webmail layout, one for the tablet layout, and one for a mobile layout. Building these three layouts will allow you to see how your content will break on various devices, and it will help determine what media queries you’ll need.
 
-<div style="page-break-after: always;"></div>
-
 📧 Coding mobile emails
 -----------------------
 
@@ -132,6 +127,7 @@ Here’s what a basic stylesheet using both embedded and inline styles looks lik
  
 ```html
 Embedded styles
+
 <head>
 <style type="text/css">
     /* regular CSS styles go here */
@@ -171,11 +167,9 @@ For a more exhaustive list of what will work in your mobile-friendly email templ
 
 Now, it’s time to revisit our earlier example of an email layout that’s been ‘narrowed down’ and stacked for a mobile display. Here’s the design in iPhone Xs:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-coding-mobile-emails.png?raw=true" width="300"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-coding-mobile-emails.png?raw=true" width="250"/></a>
      
 In this example, we’ve applied the tablescale class to HTML tables containing the text and images. Below is a snippet of code that contains two @media queries, creating two breakpoints for mobile devices:
-
-<div style="page-break-after: always;"></div>
      
 ```html
 <style type="text/css">
@@ -200,6 +194,8 @@ In this example, we’ve applied the tablescale class to HTML tables containing 
 The tablescale class does something really interesting here. When the email is viewed on a device with a screen width of 640px or wider, it has no effect. However, when the screen width is 640px or less, it narrows down the table widths to 440px. This same action is taken at the second breakpoint at 479px, giving the table a width of 100%.
 
 We’ve also added !important; to the mobile-specific styles to ensure they take precedence. But otherwise, it’s run-of-the-mill CSS.
+
+<div style="page-break-after: always;"></div>
 
 You could also feature other declarations, like:
      
@@ -235,8 +231,6 @@ While two-column layouts often allow more content to be featured above the fold 
 
 One of the golden rules of email design is ‘where possible, use HTML attributes instead of CSS’. Whereas CSS support can be fairly flaky across the gamut of email clients, attributes tend to be rock solid. For example, attributes like align=”left” and cellpadding=“10” are far more reliable than their approximate CSS equivalents, float: left; and padding: 10px;. It’s exactly these attributes we’ll be using when building our two-to-one column layout.
 
-<div style="page-break-after: always;"></div>
-
 Let’s look at such a layout in Outlook 2007:
      
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-1.png?raw=true" width="510"/></a>
@@ -244,6 +238,8 @@ Let’s look at such a layout in Outlook 2007:
 In the example above, we have a 640px-wide container table, with two 300px-wide tables nested inside to form columns, similar to our previous examples. These nested columns have cellpadding=”10″ applied to stop the content from pressing hard against the edges.
 
 When coding for the web, we’d generally apply float: left; to the left-hand column, to get them sitting side-by-side. But in email, instead we can use align=”left”. As long as the container table width is more than or equal to the combined width of the two columns, both will fit nicely in this fashion.
+
+<div style="page-break-after: always;"></div>
 
 Here’s the simplified code for the two-column layout so far:
      
@@ -268,7 +264,7 @@ Here’s the simplified code for the two-column layout so far:
 
 The rendered result:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-2.png?raw=true" width="300"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-2.png?raw=true" width="160"/></a>
 
 If the container table is 640px wide, you’ll get a two-column layout. But any skinnier than this and the right column will wrap under the left column. Make it the same width as the column tables (320px) and you’ve got a flush, one-column layout that fits an iPhone display exactly, with no zooming required.
 
@@ -366,7 +362,6 @@ To ensure that the show/hide buttons are only displayed on mobile devices, we’
 And, if things go well, the result is an email with show/hide buttons that toggle content on the iPhone.
      
 ### Outlook and the 120 DPI issue
-When talking about responsive design, it’s instinctual to only think about mobile phones or tablets—but it’s so much more.
 
 Outlook continues to be widely used among many businesses, and thus should not be ignored when thinking about your responsive email design. So let’s breakdown the 120 DPI issue and how we can code around it.
 
@@ -374,11 +369,11 @@ DPI stands for dots per inch and is a unit of measurement for screen resolutions
 
 When the DPI is scaled to 120, it will affect your text size and images, while your containers maintain their original widths, thus breaking your email. Here’s an example without 120 DPI scaling:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-5.jpg?raw=true" width="510"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-5.jpg?raw=true" width="400"/></a>
  
 And here’s that same example with 120 DPI scaling:
      
-<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-6.jpg?raw=true" width="510"/></a>
+<a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-building-responsive-layouts-6.jpg?raw=true" width="400"/></a>
      
 This problem occurs when Microsoft Word is used to render an email, and is most common in Outlook 2007 through 2013 versions. This scaling issue continues to be a thorn in the side of many email developers and designers as this zoomed view often stretches your images, enlarges your text, and creates an overall poor user experience.
 
@@ -477,9 +472,6 @@ Finally, a word of advice: While it’s very easy to become fanatical about tail
 
 If 85% of your mobile-toting subscribers are viewing your email in 320px x 480px viewports, don’t feel like you have to create a @media query for every device. Creating a fluid design that can scale using a combination of percentages and defined pixel widths you will be able to cover a large percentage of your subscribers.
 
-<div style="page-break-after: always;"></div>
-     
-
 💾 Optimizing images for mobile
 -------------------------------
      
@@ -515,6 +507,8 @@ xmlns:o="urn:schemas-microsoft-com:office:office">
 ```
 
 Next, we’ll insert our 120 DPI scaling to target Outlook 2007-2013 and ensure our email scales correctly. This code is placed in the "head" tag and outside of the "style" tag.
+
+<div style="page-break-after: always;"></div>
  
 ```
 <!--[if gte mso 9]><xml>
@@ -553,6 +547,8 @@ xmlns:o="urn:schemas-microsoft-com:office:office">
     }
 </style>
 
+
+
 <!--[if gte mso 9]><xml>
     <o:OfficeDocumentSettings>
     <o:AllowPNG/>
@@ -570,6 +566,8 @@ Within the "td" is where we’ll add a style and input our background image, dec
 This code will give your email a solid base that will render correctly in Gmail and Apple Mail, including iPhone. But we’re not done yet, we need to make this background bulletproof for Outlook.
 
 <a href="https://github.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/responsive-email-design/blob/main/images/sergeyleschev-optimizing-images-for-mobile-2.jpg?raw=true" width="510"/></a>
+
+<div style="page-break-after: always;"></div>
 
 ### Background images in Outlook: bulletproof backgrounds
 Stig Morten Myre developed a popular technique to create these bulletproof backgrounds, and even created a handy background image builder. The additional VML, Microsoft’s Vector Markup Language, will allow our background image to render correctly in Outlook, specifically 2007-2019.
@@ -594,6 +592,8 @@ Next we’ll declare that this is VML, and set the style with width and height t
 
 Finally, we’ll use the v:shape tag to identify the position, and, as a best practice, restate the width and height and then place our end cap to identify what code will be replaced.
 
+<div style="page-break-after: always;"></div>
+
 Here’s what it should look like:
 
 ```html
@@ -606,7 +606,8 @@ Here’s what it should look like:
    <div> 
 <!-- code we are replacing -->
 </div>
-    <!--[if gte mso 9]>
+
+<!--[if gte mso 9]>
   </v:shape>
       <![endif]-->
 ```
@@ -642,8 +643,6 @@ So let’s put it all together.
 
 It’s generally recommended that images be resized to fit within a viewport of mobile devices. But there are special occasions when your design doesn’t allow this, resulting in a small image with illegible text.
 
-<div style="page-break-after: always;"></div>
-
 ### Using unique images for mobile devices
 If using a background image with live text (as seen in the example above) is not an option, you can create a unique image specifically for mobile devices. This can be accomplished by surrounding the image in a table cell or "div", then creating a media query that hides the original and shows another header image as a background image instead:
  
@@ -658,7 +657,11 @@ If using a background image with live text (as seen in the example above) is not
         display: none;
     }
 }
-HTML
+```
+ 
+<div style="page-break-after: always;"></div>
+ 
+```html
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
     <tr>
         <td class="headercell">
@@ -667,8 +670,6 @@ HTML
     </tr>
 </table>
 ```
- 
-<div style="page-break-after: always;"></div>
 
 Here’s how things look before and after the header images have been swapped out:
 
@@ -679,9 +680,7 @@ An advantage to using this technique is that you can shorten the length of email
 ### Resizing images for fluid layouts
 The issue with the background image swap method above is that it’s really only effective with static-width email designs.
 
-These days, mobile devices can come in all sorts of shapes and sizes, therefore making fluid email layouts a popular option. 
-
-<div style="page-break-after: always;"></div>
+These days, mobile devices can come in all sorts of shapes and sizes, therefore making fluid email layouts a popular option.
 
 While the obvious solution seems to be to set background-size: 100% in the earlier media query, as [Elliot Jay Stocks points out](https://elliotjaystocks.com/blog/better-background-images-for-responsive-web-design/), the better option is to use background-size: cover:
 
@@ -691,7 +690,6 @@ While the obvious solution seems to be to set background-size: 100% in the earli
         width: 100% !important;
     }
 }
-
 @media only screen and (max-width: 479px) {
     .headerimg {
         background-image: url(https://engage.sailthru.com/rs/500-BIA-880/images/hero_img_mobile.jpg);
@@ -700,7 +698,6 @@ While the obvious solution seems to be to set background-size: 100% in the earli
         background-position: center !important;
         background-repeat: no-repeat !important;
     }
-
     .imgheader {
         display: none;
     }
@@ -711,8 +708,6 @@ While the obvious solution seems to be to set background-size: 100% in the earli
 Our final tip is in regards to getting images to display as sharply as possible on Apple’s [Retina displays](https://en.wikipedia.org/wiki/Retina_display). This is one that we’ve covered before, but given that these displays aren’t going away anytime soon, it’s worth a recap.
 
 The trick is to create key images at twice the size you actually plan on displaying them, thus making the image look super crisp on iPhone 11 and iPad displays. For example, using our earlier background image hack, we’d create a header image that was really 600px x 300px (e.g. https://image.url600@2x.jpg), but then shrink it down for mobile screens.
-
-<div style="page-break-after: always;"></div>
 
 Here’s how the media query would look:
  
@@ -800,7 +795,11 @@ First of all, we wanted to approach the most apparent issue with Twitter’s not
 @media only screen and (max-width: 479px) { ... }
 ```
      
-If you’ve read much on responsive email design, you may know that you add these declarations to your "style" tags. The stylesheets within can only be interpreted by HTML email clients that meet the @media-only screen and (max-width: 479px) criteria. So let’s put it to use on adapting the layout here. First up, there are two tables surrounding the body of the email message:
+If you’ve read much on responsive email design, you may know that you add these declarations to your "style" tags. The stylesheets within can only be interpreted by HTML email clients that meet the @media-only screen and (max-width: 479px) criteria. So let’s put it to use on adapting the layout here. 
+
+<div style="page-break-after: always;"></div>
+
+First up, there are two tables surrounding the body of the email message:
      
 ```html
 <table cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -921,9 +920,7 @@ I have a clear focus on time-to-market and don't prioritize technical debt.
 
 ALT: SIARHEI LIASHCHOU
 
-<br />
-
-<footer class="markdown-body">
+<footer>
   <p style="font-size: 10px">
   <a href="https://sergeyleschev.github.io">leader</a>, <a href="https://sergeyleschev.github.io">knowledge</a>, <a href="https://sergeyleschev.github.io">qualifications</a>, <a href="https://sergeyleschev.github.io">education</a>, <a href="https://sergeyleschev.github.io">tips</a>, <a href="https://sergeyleschev.github.io">skills</a>, <a href="https://sergeyleschev.github.io">multitasking</a>, <a href="https://sergeyleschev.github.io">references</a>, <a href="https://sergeyleschev.github.io">success</a>, <a href="https://sergeyleschev.github.io">work</a>, <a href="https://sergeyleschev.github.io">job</a>, <a href="https://sergeyleschev.github.io">tie</a>, <a href="https://sergeyleschev.github.io">challenges</a>, <a href="https://sergeyleschev.github.io">abilities</a>, <a href="https://sergeyleschev.github.io">impress</a>, <a href="https://sergeyleschev.github.io">responsibility</a>, <a href="https://sergeyleschev.github.io">future</a>, <a href="https://sergeyleschev.github.io">weeknesses</a>, <a href="https://sergeyleschev.github.io">benefits</a>, <a href="https://sergeyleschev.github.io">results</a>, <a href="https://sergeyleschev.github.io">team player</a>, <a href="https://sergeyleschev.github.io">strengths</a>, <a href="https://sergeyleschev.github.io">interview</a>, <a href="https://sergeyleschev.github.io">degress</a>, <a href="https://sergeyleschev.github.io">examples</a>, <a href="https://sergeyleschev.github.io">strengths</a>, <a href="https://sergeyleschev.github.io">experienced</a>, <a href="https://sergeyleschev.github.io">problem solver</a>, <a href="https://sergeyleschev.github.io">candidate</a>, <a href="https://sergeyleschev.github.io">agency</a>, <a href="https://sergeyleschev.github.io">objective</a>, <a href="https://sergeyleschev.github.io">initiative</a>, <a href="https://sergeyleschev.github.io">team</a>, <a href="https://sergeyleschev.github.io">dreams</a>, <a href="https://sergeyleschev.github.io">conflict</a>, <a href="https://sergeyleschev.github.io">can-do</a>, <a href="https://sergeyleschev.github.io">training</a>, <a href="https://sergeyleschev.github.io">questions</a>, <a href="https://sergeyleschev.github.io">job</a>, <a href="https://sergeyleschev.github.io">work</a>, <a href="https://sergeyleschev.github.io">career</a>, <a href="https://sergeyleschev.github.io">created</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">swift</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">typescript</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">javascript</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">sql</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">nosql</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">postgresql</a>, <a href="https://sergeyleschev.github.io">oracle</a>, <a href="https://sergeyleschev.github.io">sql server</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">react</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">redux</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">swiftui</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">objective-c</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">devops</a>, <a href="https://sergeyleschev.github.io">aws</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">mongodb</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">pl/sql</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">angular</a>, <a href="https://sergeyleschev.github.io">project management</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">nodejs</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">nextjs</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">nestjs</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">api</a>, <a href="https://sergeyleschev.github.io">agile</a>, <a href="https://sergeyleschev.github.io">amplitude</a>, <a href="https://sergeyleschev.github.io">analytics</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">appclip</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">appstore</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">bash</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">css</a>, <a href="https://sergeyleschev.github.io">jira</a>, <a href="https://sergeyleschev.github.io">confluence</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">git</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">graphql</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">html</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">html5</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">mvp</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">mvvm</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">nginx</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">ssh</a>, <a href="https://sergeyleschev.github.io">prime react</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">rest</a>, <a href="https://sergeyleschev.github.io">teamcity</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-fullstack-roadmap.html">typeorm</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">uikit</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">uml</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">viper</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">widgets</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">xcode</a>, <a href="https://sergeyleschev.github.io">json</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">linux</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">docker</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-system-architect-roadmap.html">mobx</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">tvOS</a>, <a href="https://sergeyleschev.github.io/sergeyleschev-ios-roadmap.html">watchOS</a>
   </p>
