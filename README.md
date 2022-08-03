@@ -6,7 +6,7 @@ Google Engineering Level: L6+
 Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google Engineering Level: L6+
 
 ## 🏆 Awards
-### Ranking #Dev: Global TOP 300 ([Certificate](https://leetcode.com/sergeyleschev/))
+### Ranking #Dev: Global TOP 200 ([Certificate](https://leetcode.com/sergeyleschev/))
 <a href="https://leetcode.com/sergeyleschev"><img itemprop="image" alt="Sergey Leschev" src="https://github.com/sergeyleschev/sergeyleschev/blob/main/leetcode-ranking.png?raw=true" width="410"/></a>
 
 ---
@@ -27,7 +27,7 @@ Design large-scale systems / 2022 / Responsive Email Design @ S.Leschev. Google 
 <div style="page-break-after: always;"></div>
 
 ## Licenses & certifications
-- 🏆 LeetCode Global TOP 300 (TypeScript: [Certificate](https://leetcode.com/sergeyleschev/), Sources: [TypeScript](https://github.com/sergeyleschev/leetcode-typescript)).
+- 🏆 LeetCode Global TOP 200 (TypeScript: [Certificate](https://leetcode.com/sergeyleschev/), Sources: [TypeScript](https://github.com/sergeyleschev/leetcode-typescript)).
 - 🏆 Golden Award for the Year of the Tiger Challenge (TypeScript: [Certificate](https://app.codility.com/cert/view/certQBA3EW-QESXM38DNR3SXMYZ/), Sources: [Codility](https://github.com/sergeyleschev/codility-swift)).
 - 2022 June LeetCode Challenge ([2022-06-30](https://leetcode.com/sergeyleschev)).
 - 2022 May LeetCode Challenge ([2022-05-31](https://leetcode.com/sergeyleschev)).
