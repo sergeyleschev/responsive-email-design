@@ -880,6 +880,7 @@ Now, on top of the above re-factors, we added some extra padding around elements
 ## Licenses & certifications
 - 🏆 LeetCode Global TOP 200 (TypeScript: [Certificate](https://leetcode.com/sergeyleschev/), Sources: [TypeScript](https://github.com/sergeyleschev/leetcode-typescript)).
 - 🏆 Golden Award for the Year of the Tiger Challenge (TypeScript: [Certificate](https://app.codility.com/cert/view/certQBA3EW-QESXM38DNR3SXMYZ/), Sources: [Codility](https://github.com/sergeyleschev/codility-swift)).
+- 2022 July LeetCode Challenge ([2022-07-31](https://leetcode.com/sergeyleschev)).
 - 2022 June LeetCode Challenge ([2022-06-30](https://leetcode.com/sergeyleschev)).
 - 2022 May LeetCode Challenge ([2022-05-31](https://leetcode.com/sergeyleschev)).
 - 2022 Apr LeetCode Challenge ([2022-04-30](https://leetcode.com/sergeyleschev)).
